@@ -1,6 +1,10 @@
 # รายงานผลการทดลอง: Database Indexing Lab
 **วิชา:** 8903316 Web Application Development  
-**หัวข้อ:** การทำ Indexing ใน Database เพื่อจัดการข้อมูลขนาดใหญ่ (1,000,000 rows) และเพิ่มความเร็วในการ Query
+**หัวข้อ:** การทำ Indexing ใน Database เพื่อจัดการข้อมูลขนาดใหญ่ (1,000,000 rows) และเพิ่มความเร็วในการ Query  
+**ผู้จัดทำ:** ภครพล ฤทธิ์คันโท (Pakaraphon Ritkanto)  
+**รหัสนิสิต:** 67160360  
+**Email:** 67160360@go.buu.ac.th  
+**GitHub Repository:** [https://github.com/67160360-AI/indexing---db](https://github.com/67160360-AI/indexing---db)  
 
 ---
 
@@ -234,4 +238,3 @@ Execution Time: 20.366 ms
 3. **ระวัง Index Pitfalls:** หลีกเลี่ยงการนำ Function ไปครอบคอลัมน์ หรือการคำนวณทางคณิตศาสตร์บนคอลัมน์ใน WHERE clause เพราะจะทำให้ไม่สามารถใช้ Index ได้
 4. **ประโยชน์ของ Index-Only Scan และ Covering Index:** หาก Index เก็บข้อมูลครบทุกคอลัมน์ที่ Query ต้องการ (`SELECT`, `WHERE`, `GROUP BY`, `ORDER BY`) Database Engine จะสามารถตอบ Query ได้จากโครงสร้าง Index โดยตรงโดยไม่ต้องเสียเวลาไปเปิด Table Block (Heap Blocks)
 5. **Trade-off ระหว่าง Read vs Write:** ทุก Index ที่สร้างขึ้นจะช่วยให้การอ่านข้อมูล (`SELECT`) เร็วขึ้นอย่างมหาศาล แต่แลกมาด้วยพื้นที่ Disk ที่เพิ่มขึ้น และการเขียนข้อมูล (`INSERT`, `UPDATE`, `DELETE`) ที่ช้าลงเสมอ จึงควรสร้างเฉพาะ Index ที่จำเป็นต่อรูปแบบการใช้งานจริงของระบบ
-
